@@ -1,0 +1,108 @@
+[MASTER]
+# Specify a score threshold to be exceeded before program exits with error.
+fail-under=10
+# number of processors available to use.
+jobs=1
+
+[MESSAGES CONTROL]
+disable=print-statement,
+parameter-unpacking,
+unpacking-in-except,
+old-raise-syntax,
+reload-builtin,
+
+[REPORTS]
+# Python expression which should return a score less than or equal to 10. You
+evaluation=10.0 - ((float(5 * error + warning + refactor + convention) / statement) * 10)
+# Set the output format. Available formats are text, parseable, colorized, json
+output-format=text
+# Activate the evaluation score.
+score=yes
+
+[REFACTORING]
+# Maximum number of nested blocks for function / method body
+max-nested-blocks=5
+# Complete name of functions that never returns. When checking for
+never-returning-functions=sys.exit
+
+[BASIC]
+# Naming style matching correct argument names.
+argument-naming-style=snake_case
+# Naming style matching correct attribute names.
+attr-naming-style=snake_case
+# Naming style matching correct class attribute names.
+class-attribute-naming-style=any
+# Naming style matching correct class names.
+class-naming-style=PascalCase
+# Naming style matching correct constant names.
+const-naming-style=UPPER_CASE
+# Naming style matching correct function names.
+function-naming-style=snake_case
+# Good variable names which should always be accepted, separated by a comma.
+good-names=i,
+           j,
+           k,
+           ex,
+           Run,
+           _
+# Include a hint for the correct naming format with invalid-name.
+include-naming-hint=no
+# Naming style matching correct inline iteration names.
+inlinevar-naming-style=any
+# Naming style matching correct method names.
+method-naming-style=snake_case
+[FORMAT]
+# Regexp for a line that is allowed to be longer than the limit.
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+# Number of spaces of indent required inside a hanging or continued line.
+indent-after-paren=4
+# String used as indentation unit. This is usually "    " (4 spaces) or "\t" (1
+# tab).
+indent-string='    '
+# Maximum number of characters on a single line.
+max-line-length=200
+# Maximum number of lines in a module.
+max-module-lines=100
+# List of optional constructs for which whitespace checking is disabled. `dict-
+# `empty-line` allows space-only lines.
+no-space-check=trailing-comma,
+               dict-separator
+
+[SIMILARITIES]
+# Ignore comments when computing similarities.
+ignore-comments=yes
+# Ignore docstrings when computing similarities.
+ignore-docstrings=yes
+# Ignore imports when computing similarities.
+ignore-imports=no
+# Minimum lines number of a similarity.
+min-similarity-lines=4
+
+[SPELLING]
+# Limits count of emitted suggestions for spelling mistakes.
+max-spelling-suggestions=4
+# Tells whether to store unknown words to the private dictionary (see the
+# --spelling-private-dict-file option) instead of raising a message.
+spelling-store-unknown-words=no
+
+[TYPECHECK]
+# List of decorators that produce context managers, such as
+# contextlib.contextmanager. Add to this list to register other decorators that
+# produce valid context managers.
+contextmanager-decorators=contextlib.contextmanager
+
+[VARIABLES]
+# Tells whether unused global variables should be treated as a violation.
+allow-global-unused-variables=yes
+
+[DESIGN]
+# Maximum number of statements in function / method body.
+max-statements=50
+# Minimum number of public methods for a class (see R0903).
+min-public-methods=2
+
+[EXCEPTIONS]
+# Exceptions that will emit a warning when being caught. Defaults to
+# "BaseException, Exception".
+overgeneral-exceptions=BaseException,
+                       Exception

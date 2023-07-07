@@ -1,0 +1,8 @@
+selenium==4.10.0
+pytest
+flake8
+python-dotenv
+requests
+pylint
+pytest-reportportal
+psutil
